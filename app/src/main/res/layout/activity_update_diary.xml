@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clUpdateDiary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEDFE1"
+    tools:context=".AddDiaryMoodActivity">
+
+    <TextView
+        android:id="@+id/tvUpdateDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="新的日記內容"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnUpdateDiaryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#D0104C"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpdateDiary" />
+
+    <Button
+        android:id="@+id/btnUpdateDiaryTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#D0104C"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUpdateDiaryDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnUpdateDiaryDate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUpdateDiaryMood"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/radius_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateDiaryDate">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUpdateDiaryAct"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/etUpdateDiaryNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvUpdateDiaryMood" />
+
+    <ImageView
+        android:id="@+id/fabUpdateDiaryComplete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ok_48px" />
+
+
+    <EditText
+        android:id="@+id/etUpdateDiaryNote"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/radius_all"
+        android:ems="10"
+        android:hint="添加備註筆記..."
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabUpdateDiaryComplete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUpdateDiaryTime"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpdateDiaryTime"
+        app:layout_constraintTop_toTopOf="@+id/btnUpdateDiaryTime"
+        app:srcCompat="@drawable/clock_200px" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUpdateDiaryDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnUpdateDiaryDate"
+        app:srcCompat="@drawable/calendar_96px" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

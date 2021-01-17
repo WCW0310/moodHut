@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_all"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <android.widget.NumberPicker
+        android:id="@+id/npChooseMood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnChooseMoodCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="#D0104C"
+            android:text="@string/btn_cancle" />
+
+        <Button
+            android:id="@+id/btnChooseMoodConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="#D0104C"
+            android:text="@string/btn_confirm" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SquareFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FEDFE1">
+
+        <TextView
+            android:id="@+id/tvSquareEditPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/radius_text_view_button"
+            android:elevation="10dp"
+            android:foreground="@drawable/ripple_test"
+            android:padding="5dp"
+            android:text="檢視自己的貼文"
+            android:textColor="#fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSquareRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/radius_text_view_button"
+            android:elevation="10dp"
+            android:foreground="@drawable/ripple_test"
+            android:padding="5dp"
+            android:text="刷新貼文"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/radius_text_view_button"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/tvSquareNext"
+            app:layout_constraintStart_toEndOf="@+id/tvSquarePrior"
+            app:layout_constraintTop_toBottomOf="@+id/tvSquareEditPost">
+
+            <TextView
+                android:id="@+id/tvSquarePostNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="第？篇，共？篇"
+                android:textColor="#fff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSquareHostName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="PO文者暱稱"
+                    android:textColor="#fff"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSquarePostDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="PO文時間"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius_text_view_button"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvSquareNext"
+            app:layout_constraintStart_toEndOf="@+id/tvSquarePrior">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:text="回覆貼文開啟與PO文者的秘密聊天室"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/etSquareMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radius_all"
+                    android:elevation="2dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="請輸入訊息"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivSquareSend"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivSquareSend"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:foreground="@drawable/ripple_test"
+                    android:src="@drawable/send_60px"
+                    app:layout_constraintBottom_toBottomOf="@+id/etSquareMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/etSquareMessage" />
+
+                <EditText
+                    android:id="@+id/etSquareNickName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radius_all"
+                    android:elevation="2dp"
+                    android:ems="10"
+                    android:hint="請輸入暱稱"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/etSquareMessage"
+                    app:layout_constraintEnd_toEndOf="@+id/etSquareMessage"
+                    app:layout_constraintStart_toStartOf="@+id/etSquareMessage"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSquareNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/radius_text_view_button"
+            android:elevation="5dp"
+            android:foreground="@drawable/ripple_test"
+            android:padding="5dp"
+            android:text="@string/choose_month_i"
+            android:textColor="#fff"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4" />
+
+        <TextView
+            android:id="@+id/tvSquarePrior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/radius_text_view_button"
+            android:elevation="5dp"
+            android:foreground="@drawable/ripple_test"
+            android:padding="5dp"
+            android:text="@string/choose_month_d"
+            android:textColor="#fff"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toStartOf="@+id/tvSquareNext"
+            app:layout_constraintStart_toEndOf="@+id/tvSquarePrior"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ScrollView
+                    android:id="@+id/svSquareDiary"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/radius_all"
+                    android:elevation="2dp"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="分享的日記"
+                            android:textColor="#D0104C" />
+
+                        <LinearLayout
+                            android:id="@+id/llSquareDiary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <ScrollView
+                    android:id="@+id/svSquarePost"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/radius_all"
+                    android:elevation="2dp"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PO文內容"
+                            android:textColor="#D0104C" />
+
+                        <TextView
+                            android:id="@+id/tvSquarePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

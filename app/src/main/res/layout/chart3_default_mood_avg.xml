@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="對心情影響"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintEnd_toStartOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivChart3DefaultMoodAvgMoodImage" />
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgHaveEventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="有活動"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart3DefaultMoodAvgMoodName" />
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgNoEventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="沒活動"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart3DefaultMoodAvgMoodName" />
+
+    <ImageView
+        android:id="@+id/ivChart3DefaultMoodAvgMoodImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgMoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintStart_toStartOf="@+id/ivChart3DefaultMoodAvgMoodImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivChart3DefaultMoodAvgMoodImage" />
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgHaveEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvChart3DefaultMoodAvgHaveEventTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvChart3DefaultMoodAvgHaveEventTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart3DefaultMoodAvgHaveEventTitle" />
+
+    <TextView
+        android:id="@+id/tvChart3DefaultMoodAvgNoEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvChart3DefaultMoodAvgNoEventTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvChart3DefaultMoodAvgNoEventTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart3DefaultMoodAvgNoEventTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

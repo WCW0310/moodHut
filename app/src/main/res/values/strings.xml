@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">日記小屋</string>
+    <string name="add_diary_button">新增日記</string>
+    <string name="tv_add_diary_mood">今天心情如何?</string>
+    <string name="edit_mood">更改心情</string>
+    <string name="next_to_add_activity">繼續</string>
+    <string name="btn_confirm">確定</string>
+    <string name="btn_cancle">取消</string>
+    <string name="alertdialog_choose_mood_score_title">選擇心情分數</string>
+    <string name="tv_add_diary_act">今天都做了什麼?</string>
+    <string name="add_note">添加備註筆記...</string>
+    <string name="edit_act">更改活動</string>
+    <string name="done_diary">完成日記</string>
+    <string name="bottom_navigation_label1">日記本</string>
+    <string name="bottom_navigation_label2">統計</string>
+    <string name="bottom_navigation_label3">日曆</string>
+    <string name="bottom_navigation_label4">更多</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_month_d"><![CDATA[<]]></string>
+    <string name="choose_month_i"><![CDATA[>]]></string>
+</resources>

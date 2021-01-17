@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="KARAKURENAI">#D0104C</color>
+    <color name="KAMENOZOKI">#A5DEE4</color>
+    <color name="SHIRONERI">#FCFAF2</color>
+
+    <color name="MOMO">#F596AA</color>
+    <color name="ARAISYU">#FB966E</color>
+    <color name="USUKI">#FAD689</color>
+    <color name="HIWA">#BEC23F</color>
+    <color name="MIZU">#81C7D4</color>
+    <color name="SHIRONEZUMI">#BDC0BA</color>
+
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clAddDiaryAct"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEDFE1"
+    tools:context=".AddDiaryActActivity">
+
+    <TextView
+        android:id="@+id/tvAddDiaryAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tv_add_diary_act"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fabBuildDiary"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:foreground="@drawable/ripple_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ok_48px" />
+
+    <ImageView
+        android:id="@+id/fabToEditAct"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:foreground="@drawable/ripple_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/edit_52px" />
+
+    <TextView
+        android:id="@+id/tvEditAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_act"
+        app:layout_constraintEnd_toEndOf="@+id/fabToEditAct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fabToEditAct"
+        app:layout_constraintTop_toBottomOf="@+id/fabToEditAct" />
+
+    <EditText
+        android:id="@+id/etDiaryNote"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints=""
+        android:background="@drawable/radius_all"
+        android:ems="10"
+        android:hint="@string/add_note"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabBuildDiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAct"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/etDiaryNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddDiaryAct">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done_diary"
+        app:layout_constraintEnd_toEndOf="@+id/fabBuildDiary"
+        app:layout_constraintStart_toStartOf="@+id/fabBuildDiary"
+        app:layout_constraintTop_toBottomOf="@+id/fabBuildDiary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

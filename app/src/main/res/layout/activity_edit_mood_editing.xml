@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clEditMoodEditing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEDFE1"
+    tools:context=".NewMoodActivity">
+
+    <TextView
+        android:id="@+id/tvEditMoodEditing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="編輯心情"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivEditMoodEditing"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvEditMoodEditing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditMoodEditing"
+        app:srcCompat="@drawable/pokeball_96px" />
+
+    <EditText
+        android:id="@+id/etEditMoodEditingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="輸入心情名稱"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEditMoodEditing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivEditMoodEditing"
+        app:layout_constraintTop_toTopOf="@+id/ivEditMoodEditing" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEditMoodEditing"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditMoodEditingHint" />
+
+    <TextView
+        android:id="@+id/tvEditMoodEditingHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="選擇心情圖片樣式:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEditMoodEditing" />
+
+    <Button
+        android:id="@+id/btnEditMoodEditingConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D0104C"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEditMoodEditing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvEditMoodEditing"
+        app:layout_constraintTop_toTopOf="@+id/tvEditMoodEditing" />
+</androidx.constraintlayout.widget.ConstraintLayout>
