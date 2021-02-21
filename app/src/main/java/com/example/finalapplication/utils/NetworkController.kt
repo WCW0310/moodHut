@@ -23,7 +23,7 @@ class NetworkController {
 
     companion object Instance {
         val JSON = "application/json; charset=utf-8".toMediaType() //Postman也會帶的header
-        private const val URL_ROOT = "http://35.229.145.199:3000"
+        private const val URL_ROOT = "http://10.0.2.2:3000"
         val client = OkHttpClient()
 
 

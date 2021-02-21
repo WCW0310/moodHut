@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat
 
 class NotifyService() : Service() {
     private var isServiceRunning = false
-    private val URL_ROOT = "http://35.229.145.199:3000"
+    private val URL_ROOT = "http://10.0.2.2:3000"
     var count = 0
     var userId: String? = null
     var chatroomId: Int? = null
@@ -192,11 +192,11 @@ class NotifyService() : Service() {
         Global.whereChatroomId = chatroomId
 
         //設定notification點擊後頁面跳轉
-        val stackBuilder =TaskStackBuilder.create(this)
+        val stackBuilder = TaskStackBuilder.create(this)
         stackBuilder.addNextIntentWithParentStack(resultIntent)
-        val resultPendingIntent =stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
+        val resultPendingIntent =
+            stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
 //        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, resultIntent, 0)
-
 
 
         val builder = NotificationCompat.Builder(this, "firstChannel")
