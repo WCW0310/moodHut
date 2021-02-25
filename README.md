@@ -4,6 +4,8 @@
 
 Android App (Kotlin) 作品 
 
+[專題企畫書](https://drive.google.com/file/d/1Y51w-MmfxbSueitf0myHjSJXkZhCJxGd/view)
+
 圖標導向心情日記本結合匿名交友平台 : 
 
 -前後端分離開發 
