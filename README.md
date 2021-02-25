@@ -34,9 +34,7 @@ App截圖：
 
 日記本頁面
 
- <img src="https://github.com/WCW0310/moodHut/blob/main/%E6%97%A5%E8%A8%98%E5%B0%8F%E5%B1%8B%E6%88%AA%E5%9C%96/%E6%97%A5%E8%A8%98%E6%9C%AC%E9%A0%81%E9%9D%A2.png" width = "90" height = "160" alt="日記本頁面" align=center />
- 
-![image](https://github.com/WCW0310/moodHut/blob/main/%E6%97%A5%E8%A8%98%E5%B0%8F%E5%B1%8B%E6%88%AA%E5%9C%96/%E6%97%A5%E8%A8%98%E6%9C%AC%E9%A0%81%E9%9D%A2.png)
+ <img src="https://github.com/WCW0310/moodHut/blob/main/%E6%97%A5%E8%A8%98%E5%B0%8F%E5%B1%8B%E6%88%AA%E5%9C%96/%E6%97%A5%E8%A8%98%E6%9C%AC%E9%A0%81%E9%9D%A2.png" width = "270" height = "480" alt="日記本頁面" align=center />
 
 新增日記-心情
 
