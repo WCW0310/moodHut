@@ -13,17 +13,19 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.EVENT_ICON_NUM
+import com.example.finalapplication.MyApp.Companion.EVENT_TYPE_NAME
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MOOD_ICON_NUM
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.editActActivity
+import com.example.finalapplication.MyApp.Companion.iconPairing
+import com.example.finalapplication.MyApp.Companion.isChangeMoodOrAct
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.NewMoodRVItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.EVENT_ICON_NUM
-import com.example.finalapplication.utils.Global.EVENT_TYPE_NAME
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MOOD_ICON_NUM
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.editActActivity
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -135,9 +137,9 @@ class NewActActivity : AppCompatActivity() {
 
                             val intent = Intent(this, EditActTypeActivity::class.java)
                             //若從新增日記進入
-                            if (Global.isFromAddDiary) {
+                            if (isFromAddDiary) {
                                 //有更改活動發生
-                                Global.isChangeMoodOrAct = true
+                                isChangeMoodOrAct = true
                             }
                             startActivity(intent)
                             //前一頁沒被finish的editActActivity
@@ -149,7 +151,7 @@ class NewActActivity : AppCompatActivity() {
         }
 
         //ivNewMood初始圖片
-        Global.iconPairing(ivNewAct, actIconPathArray[0])
+        iconPairing(ivNewAct, actIconPathArray[0])
 
         //設定佈局樣式，要傳Context，Activity是其子類，所以傳當前Activity進去就好(this)
         val layoutManager = GridLayoutManager(this, 4)
@@ -166,10 +168,10 @@ class NewActActivity : AppCompatActivity() {
                 return@Factory object : BaseViewHolder<NewMoodRVItem>(view) {
                     override fun bind(item: NewMoodRVItem) {
                         //設定圖片
-                        Global.iconPairing(ivNewMoodImageItem, item.imageResource!!)
+                        iconPairing(ivNewMoodImageItem, item.imageResource!!)
                         //點擊事件
                         view.setOnClickListener {
-                            Global.iconPairing(ivNewAct, item.imageResource)
+                            iconPairing(ivNewAct, item.imageResource)
                             iconPath = item.imageResource
                         }
                     }

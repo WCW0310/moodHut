@@ -16,17 +16,16 @@ import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.iconPairing
 import com.example.finalapplication.items.AddDiaryActItem
 import com.example.finalapplication.items.AddDiaryMoodItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 import java.util.*
-import kotlin.system.exitProcess
 
 class UpdateDiaryActivity : AppCompatActivity() {
     companion object Instance {
@@ -222,7 +221,7 @@ class UpdateDiaryActivity : AppCompatActivity() {
                 return@Factory object : BaseViewHolder<AddDiaryMoodItem>(view) {
                     override fun bind(item: AddDiaryMoodItem) {
                         //Icon配對
-                        Global.iconPairing(ivMood, item.imageResource!!)
+                        iconPairing(ivMood, item.imageResource!!)
 
                         tvMoodName.text = item.moodName
                         view.background = resources.getDrawable(R.drawable.radius_all)
@@ -293,7 +292,7 @@ class UpdateDiaryActivity : AppCompatActivity() {
                             tvActName.text = item.actArray[i]
 
                             //Icon配對
-                            Global.iconPairing(ivAct, item.imageResourceArray[i]!!)
+                            iconPairing(ivAct, item.imageResourceArray[i]!!)
 
                             view.background = resources.getDrawable(R.drawable.radius_all)
                             //設定本來日記被選的活動為黃色

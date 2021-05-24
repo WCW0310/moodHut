@@ -17,16 +17,15 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.TIME
+import com.example.finalapplication.MyApp.Companion.addDiaryMoodActivity
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.AddDiaryMoodItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.TIME
-import com.example.finalapplication.utils.Global.addDiaryMoodActivity
-import com.example.finalapplication.utils.Global.isFromAddDiary
 import org.json.JSONObject
 import java.util.*
 
@@ -167,7 +166,7 @@ class AddDiaryMoodActivity : AppCompatActivity() {
                     @SuppressLint("UseCompatLoadingForDrawables")
                     override fun bind(item: AddDiaryMoodItem) {
                         //Icon配對
-                        Global.iconPairing(ivMood, item.imageResource!!)
+                        MyApp.iconPairing(ivMood, item.imageResource!!)
 
                         tvMoodName.text = item.moodName
                         view.background = resources.getDrawable(R.drawable.radius_all)

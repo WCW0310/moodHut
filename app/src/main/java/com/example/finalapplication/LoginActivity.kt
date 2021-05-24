@@ -13,10 +13,10 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.TOKEN
 import com.example.finalapplication.services.NotifyService
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.TOKEN
 import com.example.finalapplication.utils.NetworkController
 
 class LoginActivity : AppCompatActivity() {

@@ -10,15 +10,19 @@ import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.OLD_EVENT_NAME
+import com.example.finalapplication.MyApp.Companion.TIME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.addDiaryActActivity
+import com.example.finalapplication.MyApp.Companion.addDiaryMood
+import com.example.finalapplication.MyApp.Companion.addDiaryTime
+import com.example.finalapplication.MyApp.Companion.isChangeMoodOrAct
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.AddDiaryMoodItem
 import com.example.finalapplication.utils.BaseViewHolder
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.OLD_EVENT_NAME
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.addDiaryMood
-import com.example.finalapplication.utils.Global.addDiaryTime
 import com.example.finalapplication.utils.adapters.CommonAdapter
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
@@ -132,9 +136,9 @@ class EditActTypeActivity : AppCompatActivity() {
 
                             val intent = Intent(this, EditActTypeActivity::class.java)
                             //若從新增日記進入
-                            if (Global.isFromAddDiary) {
+                            if (isFromAddDiary) {
                                 //有更改活動發生
-                                Global.isChangeMoodOrAct = true
+                                isChangeMoodOrAct = true
                             }
                             startActivity(intent)
                             finish()
@@ -272,9 +276,9 @@ class EditActTypeActivity : AppCompatActivity() {
                                                             EditActTypeActivity::class.java
                                                         )
                                                         //若從新增日記進入
-                                                        if (Global.isFromAddDiary) {
+                                                        if (isFromAddDiary) {
                                                             //有更改活動發生
-                                                            Global.isChangeMoodOrAct = true
+                                                            isChangeMoodOrAct = true
                                                         }
                                                         startActivity(intent)
                                                         finish()
@@ -318,16 +322,16 @@ class EditActTypeActivity : AppCompatActivity() {
 
     //按下返回鍵
     override fun onBackPressed() {
-        if (Global.isFromAddDiary && Global.isChangeMoodOrAct) {
-            Global.addDiaryActActivity!!.finish()
-            Global.addDiaryActActivity = null
-            Global.isFromAddDiary = false
-            Global.isChangeMoodOrAct = false
+        if (isFromAddDiary && isChangeMoodOrAct) {
+            addDiaryActActivity!!.finish()
+            addDiaryActActivity = null
+            isFromAddDiary = false
+            isChangeMoodOrAct = false
             val intent = Intent(this, AddDiaryActActivity::class.java)
             //放入原先的時間跟心情陣列
             val bundle = Bundle()
-            bundle.putString(Global.TIME, addDiaryTime)
-            bundle.putIntArray(Global.MOOD, addDiaryMood)
+            bundle.putString(TIME, addDiaryTime)
+            bundle.putIntArray(MOOD, addDiaryMood)
             intent.putExtras(bundle)
             //參考資料型態段開連結
             addDiaryTime = null
@@ -335,7 +339,7 @@ class EditActTypeActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } else {
-            Global.isFromAddDiary = false
+            isFromAddDiary = false
             super.onBackPressed()
         }
     }

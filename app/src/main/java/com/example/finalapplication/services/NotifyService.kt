@@ -6,15 +6,16 @@ import android.app.TaskStackBuilder
 import android.content.Intent
 import android.os.Bundle
 import android.os.IBinder
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.finalapplication.ChatRoomActivity
+import com.example.finalapplication.MyApp.Companion.CHAT_ROOM_ID
+import com.example.finalapplication.MyApp.Companion.MY_NAME
+import com.example.finalapplication.MyApp.Companion.OTHERS_NAME
+import com.example.finalapplication.MyApp.Companion.refreshChatList
+import com.example.finalapplication.MyApp.Companion.roomLoad
+import com.example.finalapplication.MyApp.Companion.whereChatroomId
 import com.example.finalapplication.R
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.CHAT_ROOM_ID
-import com.example.finalapplication.utils.Global.MY_NAME
-import com.example.finalapplication.utils.Global.OTHERS_NAME
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -68,7 +69,7 @@ class NotifyService() : Service() {
                             };
 
                             //更新聊天室
-                            Global.refreshChatList();
+                            refreshChatList();
 
                             //存下所有的notificationId，並呼叫下一個api
                             var arr = jsonObject.getJSONArray("notificationId");
@@ -141,8 +142,8 @@ class NotifyService() : Service() {
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i);
                     //同房的則刷新頁面
-                    if (Global.whereChatroomId == jsonObject.getInt("chatroomId")) {
-                        Global.roomLoad?.let { it() }
+                    if (whereChatroomId == jsonObject.getInt("chatroomId")) {
+                        roomLoad?.let { it() }
                         continue
                     }
                     //不同房的訊息則推播
@@ -189,7 +190,7 @@ class NotifyService() : Service() {
         resultIntent.putExtras(bundle)
 
         //告訴service進入哪間房
-        Global.whereChatroomId = chatroomId
+        whereChatroomId = chatroomId
 
         //設定notification點擊後頁面跳轉
         val stackBuilder = TaskStackBuilder.create(this)

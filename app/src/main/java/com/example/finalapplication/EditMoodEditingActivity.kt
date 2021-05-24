@@ -13,18 +13,18 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MOOD_ICON_NUM
+import com.example.finalapplication.MyApp.Companion.OLD_ICON_PATH
+import com.example.finalapplication.MyApp.Companion.OLD_MOOD_NAME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.iconPairing
+import com.example.finalapplication.MyApp.Companion.isChangeMoodOrAct
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.NewMoodRVItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MOOD_ICON_NUM
-import com.example.finalapplication.utils.Global.OLD_ICON_PATH
-import com.example.finalapplication.utils.Global.OLD_MOOD_NAME
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.isChangeMoodOrAct
-import com.example.finalapplication.utils.Global.isFromAddDiary
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -141,7 +141,7 @@ class EditMoodEditingActivity : AppCompatActivity() {
         }
 
         //ivNewMood初始圖片
-        Global.iconPairing(ivEditMoodEditing, oldIconPath!!)
+        iconPairing(ivEditMoodEditing, oldIconPath!!)
         //ev初始文字為舊心情名
         etEditMoodEditingName.setText(oldMoodName)
 
@@ -160,10 +160,10 @@ class EditMoodEditingActivity : AppCompatActivity() {
                 return@Factory object : BaseViewHolder<NewMoodRVItem>(view) {
                     override fun bind(item: NewMoodRVItem) {
                         //設定圖片
-                        Global.iconPairing(ivNewMoodImageItem, item.imageResource!!)
+                        iconPairing(ivNewMoodImageItem, item.imageResource!!)
                         //點擊事件
                         view.setOnClickListener {
-                            Global.iconPairing(ivEditMoodEditing, item.imageResource!!)
+                            iconPairing(ivEditMoodEditing, item.imageResource!!)
                             iconPath = item.imageResource!!
                         }
                     }

@@ -15,15 +15,15 @@ import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalapplication.*
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.FIRST_DIARY_DATE
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.fillPathMap
+import com.example.finalapplication.MyApp.Companion.iconPairing
 import com.example.finalapplication.items.DiaryItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.FIRST_DIARY_DATE
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.fillPathMap
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -150,7 +150,7 @@ class DiaryBookFragment : Fragment() {
                             tvDiaryBookItemMoodItemScore.text = item.moodScoreArray[i]
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemMoodItemImage,
                                 moodPathMap[item.moodNameArray[i]]!!
                             )
@@ -215,7 +215,7 @@ class DiaryBookFragment : Fragment() {
                             tvDiaryBookItemActItemName.text = item.eventArray[i]
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemActItemImage,
                                 actPathMap[item.eventArray[i]]!!
                             )

@@ -5,24 +5,26 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.CHAT_ROOM_ID
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MY_NAME
+import com.example.finalapplication.MyApp.Companion.OTHERS_NAME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.roomLoad
+import com.example.finalapplication.MyApp.Companion.toChatList
+import com.example.finalapplication.MyApp.Companion.whereChatroomId
 import com.example.finalapplication.items.MyMessageItem
 import com.example.finalapplication.items.OthersMessageItem
 import com.example.finalapplication.items.SystemMessageItem
 import com.example.finalapplication.utils.BaseViewHolder
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.CHAT_ROOM_ID
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MY_NAME
-import com.example.finalapplication.utils.Global.OTHERS_NAME
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.toChatList
 import com.example.finalapplication.utils.IType
 import com.example.finalapplication.utils.NetworkController
 import com.example.finalapplication.utils.adapters.CommonAdapter
@@ -352,7 +354,7 @@ class ChatRoomActivity : AppCompatActivity() {
         }
         roomLoad()
         //告訴service該刷新誰
-        Global.roomLoad = roomLoad;
+        MyApp.roomLoad = roomLoad;
 
         //傳送訊息按鈕
         ivChatRoomSend.setOnClickListener {
@@ -452,8 +454,8 @@ class ChatRoomActivity : AppCompatActivity() {
 
     //按下返回鍵
     override fun onBackPressed() {
-        Global.whereChatroomId = null
-        Global.roomLoad = null
+        whereChatroomId = null
+        roomLoad = null
         //告訴BottomNavigationActivity要移動到ChatListFragment
         toChatList = true
         val intentBottomNavigationActivity = Intent(this, BottomNavigationActivity::class.java)

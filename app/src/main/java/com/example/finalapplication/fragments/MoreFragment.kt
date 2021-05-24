@@ -12,11 +12,11 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.finalapplication.EditActTypeActivity
 import com.example.finalapplication.EditMoodActivity
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.iconPairing
 import com.example.finalapplication.R
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.TOKEN
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -297,7 +297,7 @@ class MoreFragment : Fragment() {
                             tvDiaryBookItemMoodItemScore.text = moodScoresMyPost[i]
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemMoodItemImage,
                                 moodPathMap[moodNamesMyPost[i]]!!
                             )
@@ -335,7 +335,7 @@ class MoreFragment : Fragment() {
 
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemActItemImage,
                                 actPathMap[eventNamesMyPost[i]]!!
                             )

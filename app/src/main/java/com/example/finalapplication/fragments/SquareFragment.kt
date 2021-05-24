@@ -11,14 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.finalapplication.ChatRoomActivity
+import com.example.finalapplication.MyApp.Companion.CHAT_ROOM_ID
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MY_NAME
+import com.example.finalapplication.MyApp.Companion.OTHERS_NAME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.fillPathMap
+import com.example.finalapplication.MyApp.Companion.iconPairing
+import com.example.finalapplication.MyApp.Companion.whereChatroomId
 import com.example.finalapplication.R
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.CHAT_ROOM_ID
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MY_NAME
-import com.example.finalapplication.utils.Global.OTHERS_NAME
-import com.example.finalapplication.utils.Global.TOKEN
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONArray
 import org.json.JSONObject
@@ -71,7 +73,7 @@ class SquareFragment : Fragment() {
         val actPathMap: MutableMap<String, String> = mutableMapOf()
 
         //填入心情與活動的圖示配對
-        Global.fillPathMap(moodAndEventJson, moodPathMap, actPathMap)
+        fillPathMap(moodAndEventJson, moodPathMap, actPathMap)
 
         //宣告物件
         //更改自己貼文的按鈕，跳出一視窗，可更新、刪除、取消
@@ -193,7 +195,7 @@ class SquareFragment : Fragment() {
                             bundle.putString(OTHERS_NAME, tvSquareHostName.text as String)
                             intent.putExtras(bundle)
                             //告訴service進入哪間房
-                            Global.whereChatroomId = it.getInt("chatRoomId")
+                            whereChatroomId = it.getInt("chatRoomId")
 
                             startActivity(intent)
                             Toast.makeText(
@@ -409,7 +411,7 @@ class SquareFragment : Fragment() {
                             tvDiaryBookItemMoodItemScore.text = moodScoresMyPost[i]
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemMoodItemImage,
                                 moodPathMap[moodNamesMyPost[i]]!!
                             )
@@ -447,7 +449,7 @@ class SquareFragment : Fragment() {
 
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemActItemImage,
                                 actPathMap[eventNamesMyPost[i]]!!
                             )
@@ -558,7 +560,7 @@ class SquareFragment : Fragment() {
                             tvDiaryBookItemMoodItemScore.text = moodScores[i]
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemMoodItemImage,
                                 moodIcons[i]
                             )
@@ -596,7 +598,7 @@ class SquareFragment : Fragment() {
 
 
                             //圖示選擇，名稱對照
-                            Global.iconPairing(
+                            iconPairing(
                                 ivDiaryBookItemActItemImage,
                                 eventIcons[i]
                             )
@@ -731,7 +733,7 @@ class SquareFragment : Fragment() {
                         tvDiaryBookItemMoodItemScore.text = moodScores[i]
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemMoodItemImage,
                             moodIcons[i]
                         )
@@ -767,7 +769,7 @@ class SquareFragment : Fragment() {
 
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemActItemImage,
                             eventIcons[i]
                         )
@@ -883,7 +885,7 @@ class SquareFragment : Fragment() {
                         tvDiaryBookItemMoodItemScore.text = moodScores[i]
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemMoodItemImage,
                             moodIcons[i]
                         )
@@ -919,7 +921,7 @@ class SquareFragment : Fragment() {
 
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemActItemImage,
                             eventIcons[i]
                         )
@@ -1027,7 +1029,7 @@ class SquareFragment : Fragment() {
                         tvDiaryBookItemMoodItemScore.text = moodScores[i]
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemMoodItemImage,
                             moodIcons[i]
                         )
@@ -1064,7 +1066,7 @@ class SquareFragment : Fragment() {
                         tvDiaryBookItemActItemName.text = eventNames[i]
 
                         //圖示選擇，名稱對照
-                        Global.iconPairing(
+                        iconPairing(
                             ivDiaryBookItemActItemImage,
                             eventIcons[i]
                         )

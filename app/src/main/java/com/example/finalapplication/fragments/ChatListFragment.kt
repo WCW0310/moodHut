@@ -12,16 +12,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalapplication.ChatRoomActivity
+import com.example.finalapplication.MyApp.Companion.CHAT_ROOM_ID
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MY_NAME
+import com.example.finalapplication.MyApp.Companion.OTHERS_NAME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.chatList
+import com.example.finalapplication.MyApp.Companion.whereChatroomId
 import com.example.finalapplication.R
 import com.example.finalapplication.items.ChatListItem
 import com.example.finalapplication.utils.BaseViewHolder
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.CHAT_ROOM_ID
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MY_NAME
-import com.example.finalapplication.utils.Global.OTHERS_NAME
-import com.example.finalapplication.utils.Global.TOKEN
 import com.example.finalapplication.utils.NetworkController
 import com.example.finalapplication.utils.adapters.CommonAdapter
 import org.json.JSONObject
@@ -129,7 +130,7 @@ class ChatListFragment : Fragment() {
                             intent.putExtras(bundle)
 
                             //告訴service進入哪間房
-                            Global.whereChatroomId = item.chatroomId
+                            whereChatroomId = item.chatroomId
 
                             startActivity(intent)
                             activity!!.finish()
@@ -162,7 +163,7 @@ class ChatListFragment : Fragment() {
         }.onFailure {}.onComplete {}.exec()
 
         //在Global設定方法，會在service中常態刷新
-        Global.chatList = this
+        chatList = this
         return chatListView
     }
 

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.finalapplication.utils.Global
+import com.example.finalapplication.MyApp.Companion.toChatList
 import com.example.finalapplication.utils.adapters.MainPageAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.system.exitProcess
@@ -37,8 +37,8 @@ class BottomNavigationActivity : AppCompatActivity() {
         })
 
         //判斷是否從聊天室跳轉過來
-        if (Global.toChatList) {
-            Global.toChatList = false
+        if (toChatList) {
+            toChatList = false
             viewPagerMainPage.setCurrentItem(3, false)
         }
 

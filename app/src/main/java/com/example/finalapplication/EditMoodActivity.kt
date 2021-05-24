@@ -10,18 +10,18 @@ import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.OLD_ICON_PATH
+import com.example.finalapplication.MyApp.Companion.OLD_MOOD_NAME
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.addDiaryMoodActivity
+import com.example.finalapplication.MyApp.Companion.iconPairing
+import com.example.finalapplication.MyApp.Companion.isChangeMoodOrAct
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.AddDiaryMoodItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.OLD_ICON_PATH
-import com.example.finalapplication.utils.Global.OLD_MOOD_NAME
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.addDiaryMoodActivity
-import com.example.finalapplication.utils.Global.isChangeMoodOrAct
-import com.example.finalapplication.utils.Global.isFromAddDiary
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -106,7 +106,7 @@ class EditMoodActivity : AppCompatActivity() {
                 return@Factory object : BaseViewHolder<AddDiaryMoodItem>(view) {
                     override fun bind(item: AddDiaryMoodItem) {
                         //設定圖片
-                        Global.iconPairing(ivEditMoodItem, item.imageResource!!)
+                        iconPairing(ivEditMoodItem, item.imageResource!!)
                         tvEditMoodItem.text = item.moodName
                         //點擊事件
                         view.setOnClickListener {

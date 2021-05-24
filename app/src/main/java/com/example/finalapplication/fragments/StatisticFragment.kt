@@ -14,15 +14,14 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.FIRST_DIARY_DATE
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.iconPairing
 import com.example.finalapplication.R
 import com.example.finalapplication.items.StatisticMostOftenMoodItem
 import com.example.finalapplication.utils.BaseViewHolder
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.FIRST_DIARY_DATE
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.iconPairing
 import com.example.finalapplication.utils.NetworkController
 import com.example.finalapplication.utils.adapters.CommonAdapter
 import com.example.finalapplication.utils.adapters.MySpinnerAdapter
@@ -339,7 +338,7 @@ class StatisticFragment : Fragment() {
 
 
                         tvChart1MostOftenMoodItemTimes.text = item.moodTimes
-                        Global.iconPairing(
+                        iconPairing(
                             ivChart1MostOftenMoodItem,
                             moodPathMap[item.moodName!!]!!
                         )
@@ -432,7 +431,7 @@ class StatisticFragment : Fragment() {
                             }
                         }
                         tvChart1MostOftenMoodItemTimes.text = item.moodTimes
-                        Global.iconPairing(
+                        iconPairing(
                             ivChart1MostOftenMoodItem,
                             actPathMap[item.moodName!!]!!
                         )
@@ -523,7 +522,7 @@ class StatisticFragment : Fragment() {
 
                         tvChart1MostOftenMoodItemName.text = item.moodName
                         tvChart1MostOftenMoodItemTimes.text = item.moodTimes
-                        Global.iconPairing(
+                        iconPairing(
                             ivChart1MostOftenMoodItem,
                             moodPathMap[item.moodName!!]!!
                         )
@@ -689,7 +688,7 @@ class StatisticFragment : Fragment() {
                                         chart2MostOftenEventView.findViewById<TextView>(R.id.tvChart1MostOftenMoodItemName)
                                     val tvChart2MostOftenEventItemTimes =
                                         chart2MostOftenEventView.findViewById<TextView>(R.id.tvChart1MostOftenMoodItemTimes)
-                                    Global.iconPairing(ivChart2MostOftenMoodItem, actPathMap[key]!!)
+                                    iconPairing(ivChart2MostOftenMoodItem, actPathMap[key]!!)
                                     tvChart2MostOftenEventItemName.text = key
                                     tvChart2MostOftenEventItemTimes.text =
                                         it.getJSONObject("mostOftenEvent")[key].toString()
@@ -739,7 +738,7 @@ class StatisticFragment : Fragment() {
                                                 .toString().toInt()
                                         )
 
-                                        Global.iconPairing(
+                                        iconPairing(
                                             ivEventByMoodScoreItem,
                                             actPathMap[keyInside]!!
                                         )
@@ -844,7 +843,7 @@ class StatisticFragment : Fragment() {
 
                         tvChart1MostOftenMoodItemName.text = item.moodName
                         tvChart1MostOftenMoodItemTimes.text = item.moodTimes
-                        Global.iconPairing(
+                        iconPairing(
                             ivChart1MostOftenMoodItem,
                             moodPathMap[item.moodName!!]!!
                         )
@@ -889,7 +888,7 @@ class StatisticFragment : Fragment() {
                                         val tvChart3DefaultMoodAvgNoEvent =
                                             chart3DefaultMoodAvgView.findViewById<TextView>(R.id.tvChart3DefaultMoodAvgNoEvent)
 
-                                        Global.iconPairing(
+                                        iconPairing(
                                             ivChart3DefaultMoodAvgMoodImage,
                                             moodPathMap[item.moodName]!!
                                         )
@@ -1029,7 +1028,7 @@ class StatisticFragment : Fragment() {
 
                             activity?.runOnUiThread {
 
-                                Global.iconPairing(
+                                iconPairing(
                                     ivChart4Mood,
                                     moodPathMap[moodNames[position]]!!
                                 )
@@ -1449,7 +1448,7 @@ class StatisticFragment : Fragment() {
                             chart2MostOftenEventView.findViewById<TextView>(R.id.tvChart1MostOftenMoodItemName)
                         val tvChart2MostOftenEventItemTimes =
                             chart2MostOftenEventView.findViewById<TextView>(R.id.tvChart1MostOftenMoodItemTimes)
-                        Global.iconPairing(ivChart2MostOftenMoodItem, actPathMap[key]!!)
+                        iconPairing(ivChart2MostOftenMoodItem, actPathMap[key]!!)
                         tvChart2MostOftenEventItemName.text = key
                         tvChart2MostOftenEventItemTimes.text = chart2MostOftenEvent[key].toString()
 
@@ -1490,7 +1489,7 @@ class StatisticFragment : Fragment() {
                                     .toString().toInt()
                             )
 
-                            Global.iconPairing(ivEventByMoodScoreItem, actPathMap[keyInside]!!)
+                            iconPairing(ivEventByMoodScoreItem, actPathMap[keyInside]!!)
                             if (keyInside == "null") {
                                 tvEventByMoodScoreItemName.text = "無活動"
                             } else {
@@ -1539,7 +1538,7 @@ class StatisticFragment : Fragment() {
                         defaultMoodChart3 = key
                         break
                     }
-                    Global.iconPairing(
+                    iconPairing(
                         ivChart3DefaultMoodAvgMoodImage,
                         moodPathMap[defaultMoodChart3]!!
                     )
@@ -1569,7 +1568,7 @@ class StatisticFragment : Fragment() {
                     )
 
                     //chart4
-                    Global.iconPairing(
+                    iconPairing(
                         ivChart4Mood,
                         moodPathMap[chart4DefaultMood]!!
                     )

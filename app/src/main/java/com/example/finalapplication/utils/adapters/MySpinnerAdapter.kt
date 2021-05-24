@@ -8,9 +8,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
+import com.example.finalapplication.MyApp.Companion.iconPairing
 import com.example.finalapplication.R
-import com.example.finalapplication.utils.Global.iconPairing
-
 
 class MySpinnerAdapter(
     val context: Context,

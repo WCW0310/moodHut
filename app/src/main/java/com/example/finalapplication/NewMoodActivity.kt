@@ -10,16 +10,16 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalapplication.MyApp.Companion.DATA
+import com.example.finalapplication.MyApp.Companion.MOOD_AND_EVENT
+import com.example.finalapplication.MyApp.Companion.MOOD_ICON_NUM
+import com.example.finalapplication.MyApp.Companion.TOKEN
+import com.example.finalapplication.MyApp.Companion.iconPairing
+import com.example.finalapplication.MyApp.Companion.isChangeMoodOrAct
+import com.example.finalapplication.MyApp.Companion.isFromAddDiary
 import com.example.finalapplication.items.NewMoodRVItem
 import com.example.finalapplication.utils.BaseViewHolder
 import com.example.finalapplication.utils.adapters.CommonAdapter
-import com.example.finalapplication.utils.Global
-import com.example.finalapplication.utils.Global.DATA
-import com.example.finalapplication.utils.Global.MOOD_AND_EVENT
-import com.example.finalapplication.utils.Global.MOOD_ICON_NUM
-import com.example.finalapplication.utils.Global.TOKEN
-import com.example.finalapplication.utils.Global.isChangeMoodOrAct
-import com.example.finalapplication.utils.Global.isFromAddDiary
 import com.example.finalapplication.utils.NetworkController
 import org.json.JSONObject
 
@@ -135,7 +135,7 @@ class NewMoodActivity : AppCompatActivity() {
         }
 
         //ivNewMood初始圖片
-        Global.iconPairing(ivNewMood, moodIconPathArray[0])
+        iconPairing(ivNewMood, moodIconPathArray[0])
 
 //設定佈局樣式，要傳Context，Activity是其子類，所以傳當前Activity進去就好(this)
         val layoutManager = GridLayoutManager(this, 4)
@@ -152,10 +152,10 @@ class NewMoodActivity : AppCompatActivity() {
                 return@Factory object : BaseViewHolder<NewMoodRVItem>(view) {
                     override fun bind(item: NewMoodRVItem) {
                         //設定圖片
-                        Global.iconPairing(ivNewMoodImageItem, item.imageResource!!)
+                        iconPairing(ivNewMoodImageItem, item.imageResource!!)
                         //點擊事件
                         view.setOnClickListener {
-                            Global.iconPairing(ivNewMood, item.imageResource!!)
+                            iconPairing(ivNewMood, item.imageResource!!)
                             iconPath = item.imageResource!!
                         }
                     }
